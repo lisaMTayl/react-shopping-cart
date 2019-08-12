@@ -19,12 +19,22 @@ function App() {
 		setCart([...cart, item]);
 	};
 
+	// added removeItem - unsure of logic to remove - still isn't working
+	const removeItem = item => {
+		// thank you StackOverflow!
+		setCart([...cart].filter(item => item.id !== item))
+	};
+
 	// wrap with components/routes with ProductContext
 	return (
 		<div className="App">
-		// Pass in products state and addItem function
+		// Pass in products state, addItem and removeItem functions
 		<ProductContext.Provider value={{ products, addItem }}>
 			<CartContext.Provider value={cart}>
+
+				{/* Cart, addItem Returns TypeError: cart.map is not a function*/}
+				{/*<CartContext.Provider value={{ cart, removeItem }}>*/}
+
 			<Navigation cart={cart} />
 
 			{/* Update Routes */}

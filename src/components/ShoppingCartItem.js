@@ -14,7 +14,7 @@ const Item = props => {
 			<div>
 				<h1>{props.title}</h1>
 				<p>$ {props.price}</p>
-				{/*add onClick to remove Item -- not working*/}
+				{/*add onClick to remove Item -- not working -- TypeError: remove Item is not a function*/}
 				<button onClick={ () => removeItem(props.id)}>Remove from cart</button>
 			</div>
 		</div>
